@@ -1,0 +1,153 @@
+@charset "UTF-8";
+.dropMeun {
+    position: relative;
+}
+
+.dropMeun ul {
+    position: absolute;
+    display: none;
+    border: 1px solid #ddd;
+    min-width: 83px;
+    z-index: 999;
+}
+
+.dropMeun ul li {
+    text-align: center;
+    background-color: #fff;
+}
+
+.dropMeun ul li a {
+    border: none !important;
+}
+
+.dropMeun ul li a:hover {
+    color: #CC9756 !important;
+}
+
+.dropMeun:hover ul {
+    display: block;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dd {
+    margin: 0;
+}
+
+body {
+    font-size: 14px;
+    color: #333;
+    font-family: "Microsoft Yahei", "微软雅黑", verdana;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    border: none;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #b4a078;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+}
+
+label {
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0;
+}
+
+i {
+    font-style: normal;
+}
+
+.center {
+    width: 1090px;
+    margin: auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.fs-14 {
+    color: #333;
+    font-size: 14px;
+}
+
+.clearfix::after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.current {
+    border-bottom: 3px solid #CC9756;
+    color: #CC9756 !important;
+}
+
+button {
+    border: none;
+}
+
+@font-face {
+    font-family: "iconfont";
+    /* Project id  */
+    src: url("../font/iconfont.ttf?t=1629353855059") format("truetype");
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xia:before {
+    content: "\e61b";
+}
+
+.icon-shouji:before {
+    content: "\e612";
+}
+
+.icon-you:before {
+    content: "\e621";
+}
+
+
+/*----------头部 公共样式 start----------*/

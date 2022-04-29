@@ -1,0 +1,100 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1306",
+      "name": "购物车空",
+      "font_class": "gouwuchekong",
+      "unicode": "f0179",
+      "unicode_decimal": 983417
+    },
+    {
+      "icon_id": "577404",
+      "name": "向右3-fill",
+      "font_class": "xiangyou3fill",
+      "unicode": "e777",
+      "unicode_decimal": 59255
+    },
+    {
+      "icon_id": "609297",
+      "name": "07_箭头_向左_fill",
+      "font_class": "07jiantouxiangzuofill",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "846521",
+      "name": "客服分析 耳麦 客服",
+      "font_class": "kefufenxiermaikefu",
+      "unicode": "e889",
+      "unicode_decimal": 59529
+    },
+    {
+      "icon_id": "1287697",
+      "name": "物流",
+      "font_class": "wuliu",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "2076192",
+      "name": " 消息",
+      "font_class": "xiaoxi",
+      "unicode": "e86f",
+      "unicode_decimal": 59503
+    },
+    {
+      "icon_id": "3092330",
+      "name": "勋章",
+      "font_class": "xunzhang",
+      "unicode": "e796",
+      "unicode_decimal": 59286
+    },
+    {
+      "icon_id": "4178677",
+      "name": "AK-MN_盾牌_fill",
+      "font_class": "mn_dunpai_fill",
+      "unicode": "e518",
+      "unicode_decimal": 58648
+    },
+    {
+      "icon_id": "9524685",
+      "name": "网易",
+      "font_class": "wangyi",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "12422468",
+      "name": "抖音",
+      "font_class": "douyin",
+      "unicode": "e884",
+      "unicode_decimal": 59524
+    },
+    {
+      "icon_id": "15559706",
+      "name": "微博",
+      "font_class": "shejiaotubiao-42",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "15933094",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "20572319",
+      "name": "网易严选",
+      "font_class": "wangyiyanxuan",
+      "unicode": "e6c4",
+      "unicode_decimal": 59076
+    }
+  ]
+}

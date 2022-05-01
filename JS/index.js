@@ -151,12 +151,8 @@ function section_Nextclick() {
         }
         //防止定时器重复开启
         if (section_times1) clearInterval(section_times1)
-        console.log(section_list.offsetLeft);
 
         //调用
-
-
-
         section_times1 = setInterval(_ => {
             max -= 20
             section_list.style.left = max + 'px'
@@ -230,3 +226,93 @@ recommed_title.onclick = function(event) {
         recommed_bigBox[1].className = 'big_box';
     }
 }
+
+//评论区轮播图
+
+let comment_div_ul = document.querySelector('.comment_nav .title~div>ul')
+let comment_arr = []
+async function comment_get() {
+    //获取服务器数据
+    let arr2 = await axios.get(url + '/comments')
+
+    //声明数组用来保存left的值
+    let comment_div_left = []
+        //声明一个变量用来存放即将打印到里面的数据
+    let comment_html = ''
+
+
+    arr2.forEach((key, index) => {
+
+        let { id, img, span, P } = key
+
+        comment_html += `<li  data-id='${index}'>
+        <a href=""><img src="${img}" alt=""></a>
+        <div> <span>${span}</span><a href="">自然纤长卷翘睫毛膏大. <span>￥69</span></a>
+            <p>${P}</p>
+        </div>
+        </li>`
+            //每个div left的值通过index的变化添加到数组中
+
+
+        comment_div_left.push(index * (360 + space))
+
+    })
+
+    comment_div_ul.innerHTML = comment_html
+
+
+    let comment_div_div = document.querySelectorAll('.comment_nav .title~div ul>li')
+
+    comment_div_div.forEach((key, index) => {
+        //将与key相匹配的left值赋值
+        key.style.left = comment_div_left[index] + 'px'
+        comment_arr.push(key)
+    })
+
+
+
+    return { comment_div_div, comment_div_left }
+}
+let comment_res = comment_get()
+    //轮播
+
+let comment_times1 = ''
+
+comment_arr[comment_arr.length - 1].style.left = '0px'
+
+
+function conment_loop() {
+    let num = 0
+
+    comment_res.then(e => {
+
+
+
+        comment_times1 = setInterval(_ => {
+            let comment_div_div = document.querySelectorAll('.comment_nav .title~div ul>li')
+
+
+            comment_div_ul.appendChild(comment_div_ul.children[0])
+            comment_div_div.forEach((key, index) => {
+                //将与key相匹配的left值赋值
+
+                key.style.left = e.comment_div_left[index] + 'px'
+
+            })
+
+
+            if (num >= e.length) {
+
+
+                clearInterval(comment_times1);
+
+
+            }
+
+        }, 2000)
+
+    })
+
+
+}
+conment_loop()

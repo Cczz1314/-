@@ -167,14 +167,13 @@ header>ul>li>a {
     color: #a4a4a4;
 }
 
-nav {
-    padding-top: 24px;
-    padding-bottom: 10px;
-}
-
 nav>ul {
     display: flex;
     justify-content: space-between;
+}
+
+nav>ul>li {
+    height: 40px;
 }
 
 .nav_active:after {
@@ -190,6 +189,7 @@ nav>ul {
 nav>ul>li>a {
     color: black;
     font-weight: 700;
+    line-height: 40px;
 }
 
 nav>ul>li:first-child>a {
@@ -201,16 +201,19 @@ nav>ul>li:first-child {
 }
 
 nav .secondNav {
-    top: 53px;
+    top: 40px;
     left: -40px;
     position: absolute;
     background-color: #ffffff;
     z-index: 10;
     width: 1300px;
-    display: flex;
+    display: none;
     font-size: 14px;
     justify-content: space-evenly;
-    opacity: 0;
+}
+
+nav>ul>li:hover>div {
+    display: block;
 }
 
 nav .secondNav .secondNav_title {
@@ -224,8 +227,14 @@ nav .secondNav .secondNav_title {
     border-bottom: 1px solid #a4a4a4;
 }
 
+nav .secondNav ul {
+    float: left;
+    margin: 0 20px;
+}
+
 nav .secondNav ul li {
     height: 60px;
+    width: 100%;
 }
 
 nav .secondNav ul li img {

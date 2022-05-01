@@ -665,12 +665,30 @@ section .section_list div div p {
 .food .box~div>a {
     display: block;
     height: 270px;
+    width: 268px;
     position: relative;
     background-color: #f4f4f4;
 }
 
+.food .box~div {
+    transition: all 1s;
+}
+
+.food .box~div:hover img~img {
+    display: block;
+}
+
+.food .box~div:hover img {
+    display: none;
+}
+
+.food .box~div:hover {
+    background-color: #cc9756;
+    box-shadow: 5px 5px 5px #666;
+}
+
 .food .box~div>a>img {
-    margin: 0 auto;
+    margin: 0px 40px;
     position: absolute;
     top: 0;
     width: 185px;
@@ -805,16 +823,36 @@ section .section_list div div p {
 }
 
 .comment_nav .title~div {
+    height: 510px;
+    width: 1100px;
     position: relative;
-    background-color: white;
+    overflow: hidden;
 }
 
-.comment_nav .title~div>div {
+.comment_nav .title~div ul li {
+    display: block;
+    width: 350px;
+    top: 10px;
+    background-color: white;
     position: absolute;
-    width: 345px;
+    transition: left 1s;
+}
+
+.comment_nav .title~div ul .comment_0 {
+    transition: none;
+}
+
+.comment_nav .title~div ul {
+    position: relative;
+    height: 100%;
+}
+
+.comment_nav .title~div ul li>div {
+    position: absolute;
+    width: 340px;
     background-color: white;
     height: 187px;
-    bottom: 0;
+    top: 260px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -822,24 +860,24 @@ section .section_list div div p {
     box-sizing: border-box;
 }
 
-.comment_nav .title~div>div>span {
+.comment_nav .title~div ul li>div>span {
     font-size: 14px;
     color: #666;
     display: block;
 }
 
-.comment_nav .title~div>div>a {
+.comment_nav .title~div ul li>div>a {
     display: block;
     color: black;
     margin: 12px 0 22px 0;
 }
 
-.comment_nav .title~div>div>a>span {
+.comment_nav .title~div ul li>div>a>span {
     font-size: 14px;
     color: #666;
 }
 
-.comment_nav .title~div>div>p {
+.comment_nav .title~div>ul li>p {
     line-height: 22px;
     font-size: 14px;
 }

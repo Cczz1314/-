@@ -284,7 +284,7 @@ let comment_res = comment_get()
 
 let comment_times1 = ''
 
-comment_arr[comment_arr.length - 1].style.left = '0px'
+// comment_arr[comment_arr.length - 1].style.left = '0px'
 
 
 function conment_loop() {

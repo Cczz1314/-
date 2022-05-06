@@ -53,3 +53,63 @@ input.onblur = function() {
 input.onfocus = function() {
     headerUl.style.display = 'block'
 }
+
+let gouwuche = document.querySelector('header>div>a~span')
+let ul = document.querySelector('header>div>ul')
+
+async function inner() {
+    await axios.get('http://localhost:3000/profile').then(res => {
+        gouwuche.innerHTML = res.data.length
+        for (let i = 0; i < res.data.length; i++) {
+            let li = document.createElement('li')
+            li.innerHTML = `   <div class="w2">
+        <a href="#">
+            <img src="${res.data[i].img}" alt="">
+        </a>
+    </div>
+    <div class="w3">
+        <span>${res.data[i].wares}</span>
+        <p>数量:${res.data[i].num}
+        </p>
+    </div>
+    <div class="w5">
+        <span class="price">¥${Math.round(((res.data[i].num*res.data[i].amount2.replace('¥','')) * 100)) / 100}</span>
+    </div>
+    <div class="w6">
+        <a href="#none" data-id='${res.data[i].id}'>X</a>
+    </div>
+        `
+            ul.appendChild(li)
+        }
+
+
+    })
+
+    let liAll = document.querySelectorAll('header>div>ul li')
+
+
+    liAll.forEach((value, key) => {
+        value.onclick = liAllClickFn
+    })
+}
+
+inner()
+
+function liAllClickFn(eve) {
+    if (eve.target.nodeName == 'A') {
+        if (eve.target.innerHTML == 'X') {
+
+            let id = eve.target.dataset.id
+
+            axios.delete('http://localhost:3000/profile/' + id)
+
+
+        }
+    }
+}
+let div = document.querySelectorAll('header>div')
+
+div.onmouseover = function() {
+    inner()
+
+}

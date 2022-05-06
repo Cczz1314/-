@@ -102,7 +102,7 @@ header form>input:last-child {
     float: right;
 }
 
-header>a {
+header>div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,12 +114,47 @@ header>a {
     color: #cc9756;
 }
 
+header>div>ul {
+    position: absolute;
+    top: 65px;
+    left: 800px;
+    display: none;
+    width: 350px;
+    height: 200px;
+    z-index: 999;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+header>div:hover>ul {
+    display: block;
+}
+
+header>div>ul>li {
+    margin-top: 10px;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header>div>ul>li img {
+    width: 50px;
+    height: 100%;
+}
+
 header>span {
     color: #cc9756;
     font-size: 53px;
 }
 
-header>a span:last-child {
+header>div>a {
+    color: #cc9756;
+}
+
+header>div span:nth-child(2) {
     margin-left: 16px;
     width: 20px;
     height: 20px;

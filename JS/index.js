@@ -90,29 +90,32 @@ let section_page = 0;
 let max = 0;
 let section_times1 = ''
 let section_times2 = ''
+let div_left = []
+    //声明一个变量用来存放即将打印到里面的数据
+let section_html = ''
+
 async function get(page) {
     //获取服务器数据
-    let arr = await axios.get(url + '/posts')
+    let arr = await axios.get(url + '/posts').then(res => {
+        res.data.forEach((key, index) => {
+
+            let { id, puth, puth2, wares, amount } = key
+
+            section_html += `<div><a href="../html/shangpin.html?${index+1}" ><img src="${puth}" alt=""> <img src="${puth2}" alt=""></a><h5>${wares}</h5><p>${amount}</p></div>`
+                //每个div left的值通过index的变化添加到数组中
+
+
+
+            div_left.push(index * (265 + space))
+
+
+        })
+    })
 
     //声明数组用来保存left的值
-    let div_left = []
-        //声明一个变量用来存放即将打印到里面的数据
-    let section_html = ''
-
-
-    arr.forEach((key, index) => {
-
-        let { id, puth, puth2, wares, Price } = key
-
-        section_html += `<div><a href=""><img src="${puth}" alt=""> <img src="${puth2}" alt=""></a><h5>${wares}</h5><p>${Price}</p></div>`
-            //每个div left的值通过index的变化添加到数组中
 
 
 
-        div_left.push(index * (265 + space))
-
-
-    })
 
     section_list.innerHTML = section_html
 
@@ -231,32 +234,35 @@ recommed_title.onclick = function(event) {
 
 let comment_div_ul = document.querySelector('.comment_nav .title~div>ul')
 let comment_arr = []
+    //声明数组用来保存left的值
+let comment_div_left = []
+    //声明一个变量用来存放即将打印到里面的数据
+let comment_html = ''
 async function comment_get() {
     //获取服务器数据
-    let arr2 = await axios.get(url + '/comments')
+    await axios.get(url + '/comments').then(res => {
+        res.data.forEach((key, index) => {
 
-    //声明数组用来保存left的值
-    let comment_div_left = []
-        //声明一个变量用来存放即将打印到里面的数据
-    let comment_html = ''
+            let { id, img, span, P } = key
 
-
-    arr2.forEach((key, index) => {
-
-        let { id, img, span, P } = key
-
-        comment_html += `<li  data-id='${index}'>
-        <a href=""><img src="${img}" alt=""></a>
-        <div> <span>${span}</span><a href="">自然纤长卷翘睫毛膏大. <span>￥69</span></a>
-            <p>${P}</p>
-        </div>
-        </li>`
-            //每个div left的值通过index的变化添加到数组中
+            comment_html += `<li  data-id='${index}'>
+            <a href=""><img src="${img}" alt=""></a>
+            <div> <span>${span}</span><a href="">自然纤长卷翘睫毛膏大. <span>￥69</span></a>
+                <p>${P}</p>
+            </div>
+            </li>`
+                //每个div left的值通过index的变化添加到数组中
 
 
-        comment_div_left.push(index * (360 + space))
+            comment_div_left.push(index * (360 + space))
+
+        })
 
     })
+
+
+
+
 
     comment_div_ul.innerHTML = comment_html
 
